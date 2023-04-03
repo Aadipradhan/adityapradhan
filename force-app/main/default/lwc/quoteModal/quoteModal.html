@@ -1,0 +1,10 @@
+<template>
+    <lightning-modal-header label={label}></lightning-modal-header>
+    <lightning-modal-body>
+        <c-adjust-quote-price lwc:ref="adjustQuoteComp" record-data={recordData} onclosemodal={handleCancel}></c-adjust-quote-price>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="Cancel" variant = "neutral" onclick={handleCancel} class="slds-p-right--small"></lightning-button>
+        <lightning-button label="Save" variant = "brand" onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
+</template>

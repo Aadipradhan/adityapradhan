@@ -1,7 +1,9 @@
 <!-- Adjust Quote Price -->
 <template>
-  <lightning-input-field
-    field-name={adjustedAmountLabel}
-    value={adjustedAmount}
-  ></lightning-input-field>
+  <template if:true={quoteData}>
+	<p>Total Quoted Amount : &nbsp; </p>
+	<lightning-formatted-number value={quoteData.totalAmount} format-style="currency"></lightning-formatted-number>
+	<lightning-input type="number" name="amount" label="Adjusted Amount" value={quoteData.totalAmount} formatter="currency"
+		step="0.01" onchange={handleInputChange}></lightning-input>
+  </template>
 </template>
